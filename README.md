@@ -21,32 +21,23 @@ Data of yahoo finance has been tested against CBOE and seems to be accurate in m
 Under SABR model, the forward rate behaves this way : 
 
 ### Forward Rate Dynamics
-\[
-\begin{aligned}
-dF_t &= \sigma_t F_t^\beta dW_t^{(1)}, \\
-F_0 &= F_{\text{initial}},
-\end{aligned}
-\]
+dFₜ = αₜ Fₜ^βdWₜ¹
 
 ### Volatility Dynamics
-\[
-\begin{aligned}
-d\sigma_t &= \alpha \sigma_t dW_t^{(2)}, \\
-\sigma_0 &= \sigma_{\text{initial}},
-\end{aligned}
-\]
-
+dαₜ = αₜν σₜ dWₜ²
 where:
-- \( \alpha \) is the volatility of volatility,
-- \( \beta \) is the elasticity parameter,
-- \( W_t^{(1)} \) and \( W_t^{(2)} \) are correlated Brownian motions with correlation \( \rho \).
+- Wₜ¹ and Wₜ² are correlated Brownian motions with correlation ρ.
+- Beta is the shape of the distribution of forward rate : Beta close to 1 is implying log normal fwd rates while close to 0 implies normal fwd rates
+- Rho affects the slope of the vol smile : this is observed in Risk Reversal, it affects the skewness of the smile.
+- Nu affects the height of the vol smile : this is observed in Straddles and Strangles.
+- Alpha is the core parameter of SABR model, and is not observable in the market.
 
 
 The code works this way : 
 
 - Get options chain data from yahoo finance, and keep the most liquid contracts and various data cleaning
 - Compute the Implied Volatilities using Black & Scholes model with Newton Raphson Method 
-- Calibrating the SABR model to those volatilities by minimizing the SABR objective function, with a Beta set to 0.5 for simplicity (more information here : https://www.youtube.com/watch?v=Nldzkkdwt1M)
+- Calibrating the SABR model to those volatilities by minimizing the SABR objective function, with a Beta set to 0.5 for simplicity 
 - Plots the SABR and market implied volatilities corresponding to strikes 
 
 Here is an example using the TSLA options that expires on 2023-11-24 :
