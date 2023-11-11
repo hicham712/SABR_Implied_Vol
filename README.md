@@ -43,6 +43,7 @@ The code works this way :
 Here is an example using the TSLA options that expires on 2023-11-24 :
 
 ***Results from SABR calibration are [alpha,rho,nu]= [ 3.81596237 -0.33392059  3.3351598 ]***
+
 ***The option price of the put option of strike 120% (K=257.5799926757812) is according to SABR: 42.8***
 
 ![Project Image](https://github.com/hicham712/SABR_Implied_Vol/blob/main/TSLA_impliedvol.png)
