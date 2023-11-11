@@ -80,7 +80,7 @@ def convert_dict_toarray(ivs_c):
     market_strikes = np.array(market_strikes)
     return market_strikes,market_vols
 
-def plot_smile_vs_SABR(market_strikes,market_vols,SABR_vols,stock,expiry_opt):
+def plot_smile_vs_SABR(market_strikes,market_vols,SABR_vols,stock,expiry_opt,tick):
     f = plt.figure(1)
     """
     -----If CSV from CBOE is used-----
@@ -140,9 +140,11 @@ def get_vol_smile(tick,rf,date_format,expiry_opt):
     result=sabr_f.calibrate_SABR(market_strikes,market_vols,stock,rf_indx,T)
     print("Results from SABR calibration are [alpha,rho,nu]= "+ str(result.x))
     sabr_vols=[sabr_f.use_fitted_sabr_volatility(result.x,K,stock*np.exp(rf_indx*T),T) for K in market_strikes]
-
+    K_test=stock * 1.2
+    opt_price_test=round(bs_vol.bs_price(stock, K_test, T, rf_indx,sabr_f.use_fitted_sabr_volatility(result.x, K_test, stock * np.exp(rf_indx * T), T), 'p'), 2)
+    print("The option price of the put option of strike 120% (K=" + str(K_test) + ") is according to SABR: " + str(opt_price_test))
     # Plotting the smile
-    plot_smile_vs_SABR(market_strikes,market_vols,sabr_vols,stock,expiry_opt)
+    plot_smile_vs_SABR(market_strikes,market_vols,sabr_vols,stock,expiry_opt,tick)
 
 
 """ ---------Parameters to modify---------"""
@@ -155,4 +157,5 @@ expiry_opt = datetime.strptime(yo.get_expiration_dates(stock_ticker=tick)[1], da
 """---------End of parameters to modify---------"""
 
 get_vol_smile(tick,rf,date_format,expiry_opt)
+
 a=1
