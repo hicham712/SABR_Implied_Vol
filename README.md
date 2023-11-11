@@ -19,10 +19,28 @@ Commented code is here if one's would like to use CBOE data,downloaded as csv, f
 Data of yahoo finance has been tested against CBOE and seems to be accurate in most cases.
 
 Under SABR model, the forward rate behaves this way : 
-![Project Image](https://wikimedia.org/api/rest_v1/media/math/render/svg/8ddaf720df00b595a243265622315abef272aa9e)
 
-with a stochastic volatility which dynamics is : 
-![Project Image](https://wikimedia.org/api/rest_v1/media/math/render/svg/74d066485a258b07b62ba4d557d5ce0614a0001c)
+### Forward Rate Dynamics
+\[
+\begin{aligned}
+dF_t &= \sigma_t F_t^\beta dW_t^{(1)}, \\
+F_0 &= F_{\text{initial}},
+\end{aligned}
+\]
+
+### Volatility Dynamics
+\[
+\begin{aligned}
+d\sigma_t &= \alpha \sigma_t dW_t^{(2)}, \\
+\sigma_0 &= \sigma_{\text{initial}},
+\end{aligned}
+\]
+
+where:
+- \( \alpha \) is the volatility of volatility,
+- \( \beta \) is the elasticity parameter,
+- \( W_t^{(1)} \) and \( W_t^{(2)} \) are correlated Brownian motions with correlation \( \rho \).
+
 
 The code works this way : 
 
