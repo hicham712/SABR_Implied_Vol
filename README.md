@@ -1,5 +1,5 @@
 # SABR_Implied_Vol
-============= **Implementation of a SABR model for Equity Options using Yahoo Finance API** =============
+====== **Implementation of a SABR model for Equity Options using Yahoo Finance API** ======
 
 /!\ ***This uses my version of the lib yoptions (hence the file my_yoptions) since it doesn't seem to be getting up to date but it stills works fine with a little tuning !*** /!\
 
