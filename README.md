@@ -49,6 +49,6 @@ Here is an example using the TSLA options that expires on 2023-11-24 :
 
 ![Project Image](https://github.com/hicham712/SABR_Implied_Vol/blob/main/TSLA_impliedvol.png)
 
-It is then possible to quote any option on this expiry et and equity with any strike as a parameter.
+It is then possible to quote any option on this expiry and equity with any strike as a parameter.
 
 This code serves an educating purpose and should not be used to intend profit. 
