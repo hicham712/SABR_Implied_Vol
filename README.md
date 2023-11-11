@@ -9,7 +9,7 @@ This code replicates the following paper:
 - Authors: Patrick Hagan, Deep Kumar, Andrew Lesniewski, Diana Woodward
 - Published in: Wilmott Magazine, 2002 (Issue 2, pages 56-65)
 
-and applies it to Equity options.
+and applies it to Equity options. It uses the asymptotic solutions : we force the SABR model to match the Black Scholes formula of valuation.
 
 **The code is applicable to any Equity options that has option data on yahoo finance. It is possible to change parameters in the "main.py" file to apply to different equities**
 
@@ -18,10 +18,10 @@ Commented code is here if one's would like to use CBOE data,downloaded as csv, f
 
 Data of yahoo finance has been tested against CBOE and seems to be accurate in most cases.
 
-Under SABR model, the forward rate behaves this way : 
+Under SABR model on equity, the forward rate behaves this way : 
 
-### Forward Rate Dynamics
-dFₜ = αₜ Fₜ^βdWₜ¹
+### Spot Rate Dynamics
+dSₜ = αₜ Sₜ^βdWₜ¹
 
 ### Volatility Dynamics
 dαₜ = αₜν σₜ dWₜ²
