@@ -18,6 +18,8 @@ Commented code is here if one's would like to use CBOE data,downloaded as csv, f
 
 Data of yahoo finance has been tested against CBOE and seems to be accurate in most cases.
 
+
+![Project Image](https://wikimedia.org/api/rest_v1/media/math/render/svg/8ddaf720df00b595a243265622315abef272aa9e)
 The code works this way : 
 
 - Get options chain data from yahoo finance, and keep the most liquid contracts and various data cleaning
