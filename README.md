@@ -32,7 +32,7 @@ where:
 - Nu affects the height of the vol smile : this is observed in Straddles and Strangles.
 - Alpha is the core parameter of SABR model, and is not observable in the market.
 
-
+### How the code works 
 The code works this way : 
 
 - Get options chain data from yahoo finance, and keep the most liquid contracts and various data cleaning
@@ -40,6 +40,7 @@ The code works this way :
 - Calibrating the SABR model to those volatilities by minimizing the SABR objective function, with a Beta set to 0.5 for simplicity 
 - Plots the SABR and market implied volatilities corresponding to strikes 
 
+### Example 
 Here is an example using the TSLA options that expires on 2023-11-24 :
 
 - ***Results from SABR calibration are [alpha,rho,nu]= [ 3.81596237 -0.33392059  3.3351598 ]***
