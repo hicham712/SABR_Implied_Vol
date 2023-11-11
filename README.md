@@ -11,7 +11,7 @@ This code replicates the following paper:
 
 and applies it to Equity options.
 
-The code is applicable to any Equity options that has option data on yahoo finance. It is possible to change parameters in the "main.py" file to apply to different equities.
+============= The code is applicable to any Equity options that has option data on yahoo finance. It is possible to change parameters in the "main.py" file to apply to different equities =============
 
 All the data is retrieved from yahoo finance and yahoo finance options chains are used to compute implied volatilities.
 Commented code is here if one's would like to use CBOE data,downloaded as csv, for accuracy (example on TSLA : https://www.cboe.com/delayed_quotes/tsla/quote_table)
@@ -29,9 +29,7 @@ Here is an example using the TSLA options that expires on 2023-11-24
 
 Results from SABR calibration are [alpha,rho,nu]= [ 3.81596237 -0.33392059  3.3351598 ]
 
-![Alt Text]([image_url](https://github.com/hicham712/SABR_Implied_Vol/blob/main/TSLA_impliedvol.png))
-
-
+![Project Image]([image_url](https://github.com/hicham712/SABR_Implied_Vol/blob/main/TSLA_impliedvol.png))
 
 
 This code serves an educating purpose and should not be used to intend profit. 
