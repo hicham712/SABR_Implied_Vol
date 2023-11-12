@@ -27,7 +27,7 @@ dSₜ = αₜ Sₜ^βdWₜ¹
 dαₜ = αₜν σₜ dWₜ²
 where:
 - Wₜ¹ and Wₜ² are correlated Brownian motions with correlation ρ.
-- Beta is the shape of the distribution of forward rate : Beta close to 1 is implying log normal fwd rates while close to 0 implies normal fwd rates
+- Beta is the shape of the distribution of spot rate : Beta close to 1 is implying log normal spot rates while close to 0 implies normal spot rates
 - Rho affects the slope of the vol smile : this is observed in Risk Reversal, it affects the skewness of the smile.
 - Nu affects the height of the vol smile : this is observed in Straddles and Strangles.
 - Alpha is the core parameter of SABR model, and is not observable in the market.
