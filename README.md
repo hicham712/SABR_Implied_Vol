@@ -21,7 +21,7 @@ Data of yahoo finance has been tested against CBOE and seems to be accurate in m
 Under SABR model on equity, the forward rate behaves this way : 
 
 ### Spot Rate Dynamics
-dSₜ = αₜ Sₜ^βdWₜ¹
+dSₜ = αₜ Sₜ^β dWₜ¹
 
 ### Volatility Dynamics
 dαₜ = αₜν σₜ dWₜ²
