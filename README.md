@@ -36,7 +36,7 @@ where:
 The code works this way : 
 
 - Get options chain data from yahoo finance, and keep the most liquid contracts and various data cleaning
-- Compute the Implied Volatilities using Black & Scholes model with Newton Raphson Method 
+- Compute the Implied Volatilities using Black-76 model with Newton Raphson Method 
 - Calibrating the SABR model to those volatilities by minimizing the SABR objective function, with a Beta set to 0.5 for simplicity 
 - Plots the SABR and market implied volatilities corresponding to strikes 
 
