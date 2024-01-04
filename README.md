@@ -21,13 +21,13 @@ Data of yahoo finance has been tested against CBOE and seems to be accurate in m
 Under SABR model on equity, the forward rate behaves this way : 
 
 ### Forward Rate Dynamics
-dSₜ = αₜ Fₜ^β dWₜ¹
+dFₜ = αₜ Fₜ^β dWₜ¹
 
 ### Volatility Dynamics
 dαₜ = αₜν σₜ dWₜ²
 where:
 - Wₜ¹ and Wₜ² are correlated Brownian motions with correlation ρ.
-- Beta is the shape of the distribution of spot rate : Beta close to 1 is implying log normal spot rates while close to 0 implies normal spot rates
+- Beta is the shape of the distribution of forward rate : Beta close to 1 is implying log normal forward rates while close to 0 implies normal forward rates
 - Rho affects the slope of the vol smile : this is observed in Risk Reversal, it affects the skewness of the smile.
 - Nu affects the height of the vol smile : this is observed in Straddles and Strangles.
 - Alpha is the core parameter of SABR model, and is not observable in the market.
